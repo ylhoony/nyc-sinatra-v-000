@@ -4,7 +4,7 @@
   <input type="text" name="figure[name]" id="figure_name" value="<%=@figure.name%>">
   <br>
 
-  <label>Titles</label>
+  <label>Titles</label><br>
   <% Title.all.each do |title| %>
     <input type="checkbox" name="figure[title_ids][]" id="title_<%=title.id%>" value="<%=title.id%>" <%='checked' if @figure.titles.include?(title)%>><%=title.name%></input>
   <% end %>
@@ -14,7 +14,7 @@
   <input type="text" name="title[name]" id="new_title">
   <br>
 
-  <label>Landmarks</label>
+  <label>Landmarks</label><br>
   <% Landmark.all.each do |landmark| %>
     <input type="checkbox" name="figure[landmark_ids][]" id="landmark_<%=landmark.id%>" value="<%=landmark.id%>" <%='checked' if @figure.landmarks.include?(landmark)%>><%=landmark.name%></input><br>
   <% end %>
